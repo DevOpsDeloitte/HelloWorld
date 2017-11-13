@@ -4,7 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>DevOps Assessment</title>
+<title>DevOps Demo</title>
 <style>
 body {
 	background-color: #ffffff;
@@ -13,7 +13,7 @@ body {
 </head>
 <body id = "bd">
 	<form action = "hello" method = "GET">
-	<h3>Assessment</h3>
+	<h3>DevOps Demo</h3>
 	<h4>Please enter the following fields</h4>
 	Name: <input type = "text" name = "name">
 	<br>
