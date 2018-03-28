@@ -21,8 +21,6 @@ body {
 	<br>
 	Phone Number: <input type = "text" name = "phoneNumber">
 	<br>
-	Address: <input type = "text" name = "address">
-	<br>
 	<br>
 	<input type = "submit" value = "Submit" />
 	</form>
