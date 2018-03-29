@@ -7,7 +7,7 @@ pageEncoding="ISO-8859-1"%>
 <title>DevOps Demo</title>
 <style>
 body {
-	background-color: #FFFFFF;
+	background-color: #F0F0F0;
 }
 </style>
 </head>
