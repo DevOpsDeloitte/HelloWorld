@@ -14,7 +14,7 @@ body {
 <body>
 	<center>
 		<h2>
-			${message} ${name}
+			${message} ${firstName} ${lastName} ${message2}
 		</h2>
 	</center>
 
