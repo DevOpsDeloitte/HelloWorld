@@ -39,7 +39,7 @@ public class DBConnector
 		
 		try 
 		{
-			String connectionUrl = "jdbc:sqlserver://10.118.45.4:1433;databaseName=DevOps;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V";
+			String connectionUrl = "jdbc:sqlserver://localhost;databaseName=DevOps;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V";
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connect = DriverManager.getConnection(connectionUrl);
 			statement = connect.createStatement();
