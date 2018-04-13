@@ -48,6 +48,15 @@ public class HelloWorldController {
 			user.setZipcode(zip);
 			user.setCountry(country);
 			
+			DBConnector db = new DBConnector();
+			try {
+				db.writeData();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				message2 = e.toString();
+				e.printStackTrace();
+			}
+			
 			mv.addObject("message", message);
 			mv.addObject("firstName", firstName);
 			mv.addObject("lastName", lastName);
