@@ -51,7 +51,7 @@ public class DBConnector
 			connect = DriverManager.getConnection(connectionUrl);
 			
 			String sqlStatement = "Insert into [DevOps].[dbo].[Users]"
-					+ "(LastName, FirstName, UserName, Password, Address1, Address2, City, State, Country, Zipcode, Title, Email, PhoneNumber)"
+					+ "(LastName, FirstName, UserName, Password, Address1, Address2, City, State, Country, Zipcode, Title, Email, PhoneNumber) VALUES"
 					+ "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 			PreparedStatement p = connect.prepareStatement(sqlStatement);
