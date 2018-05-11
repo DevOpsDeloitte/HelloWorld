@@ -77,17 +77,22 @@ public class HelloWorldController {
 		
 		DBConnector dB = new DBConnector();
 		
+		String message2 = "";
+		
 		mv.addObject("message", "Users currently registerd");
 		
 		try
 		{
 			ArrayList<User> users = dB.readData();
 			mv.addObject("users", users);
+			message2 = "success";
 		}
 		catch (Exception e)
 		{
-			
+			message2 = "fail";
 		}
+		
+		mv.addObject("message2", message2);
 		
 		return mv;
 	}

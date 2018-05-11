@@ -16,13 +16,13 @@ body {
 <body>
 	<center>
 		<h2>
-			${message}
+			${message} ${message2}
 	      <c:forEach var = "i" begin = "1" end = "5">
 	         Item <c:out value = "${i}"/><p>
 	      </c:forEach>
 	      
-	      <c:forEach var = "user" items="${users}">
-	         Item <c:out value = "${user.lastName}"/><p>
+	      <c:forEach var = "user" items="${usersList}">
+	         <li>${user.lastName}</li>
 	      </c:forEach>
 		</h2>
 	</center>
