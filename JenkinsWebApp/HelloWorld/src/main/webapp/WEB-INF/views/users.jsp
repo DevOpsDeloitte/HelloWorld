@@ -20,6 +20,10 @@ body {
 	      <c:forEach var = "i" begin = "1" end = "5">
 	         Item <c:out value = "${i}"/><p>
 	      </c:forEach>
+	      
+	      <c:forEach var = "user" items="${users}">
+	         Item <c:out value = "${user.lastName}"/><p>
+	      </c:forEach>
 		</h2>
 	</center>
 
