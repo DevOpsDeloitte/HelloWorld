@@ -74,18 +74,18 @@ public class HelloWorldController {
 	public ModelAndView showMessage()
 	{
 		ModelAndView mv = new ModelAndView("users");
-		mv.addObject("message", "Hello from users");
 		
-//		DBConnector dB = new DBConnector();
+		DBConnector dB = new DBConnector();
 		
-//		try
-//		{
-//			ArrayList<User> users = dB.readData();
-//		}
-//		catch (Exception e)
-//		{
-//			
-//		}
+		try
+		{
+			ArrayList<User> users = dB.readData();
+			mv.addObject("users", users);
+		}
+		catch (Exception e)
+		{
+			
+		}
 		
 		return mv;
 	}

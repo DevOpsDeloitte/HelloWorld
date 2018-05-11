@@ -16,14 +16,20 @@ public class DBConnector
 			Class.forName("com.mysql.jdbc.Driver");
 			connect = DriverManager.getConnection("jdbc:sqlserver://localhost;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V");
 			statement = connect.createStatement();
-			resultSet = statement.executeQuery("Select * from users");
+			resultSet = statement.executeQuery("Select [DevOps].[dbo].[Users].UserName" 
+				+ "[DevOps].[dbo].[Users].LastName,"
+				+ "[DevOps].[dbo].[Users].FirstName"
+				+ "from [DevOps].[dbo].[Users]");
 			
 			ArrayList<User> users = new ArrayList<User>();
 			
 			while (resultSet.next())
 			{
 				User user = new User();
-				user.setAddress1(resultSet.getString(2));
+				user.setLastName(resultSet.getString(1));
+				user.setFirstName(resultSet.getString(2));
+				user.setFirstName(resultSet.getString(3));
+				users.add(user);
 			}
 			
 			return users;

@@ -161,7 +161,7 @@ body {
 		</div>
 		<div>
 			<label for="address2">Address line two:</label>
-			<input type="text" name="address2" id="address2" class="txt" required/>
+			<input type="text" name="address2" id="address2" class="txt"/>
 		</div>
 		<div>
 			<label for="city">City:</label>
