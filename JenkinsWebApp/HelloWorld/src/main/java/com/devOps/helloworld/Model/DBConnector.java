@@ -13,8 +13,8 @@ public class DBConnector
 		
 		try 
 		{
-			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:sqlserver://localhost;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V");
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			connect = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=DevOps;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V");
 			statement = connect.createStatement();
 			resultSet = statement.executeQuery("Select [DevOps].[dbo].[Users].UserName" 
 				+ "[DevOps].[dbo].[Users].LastName,"
