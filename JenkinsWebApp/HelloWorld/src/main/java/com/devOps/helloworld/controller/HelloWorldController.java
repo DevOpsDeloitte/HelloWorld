@@ -84,12 +84,13 @@ public class HelloWorldController {
 		try
 		{
 			ArrayList<User> users = dB.readData();
-			mv.addObject("users", users);
+			mv.addObject("usersList", users);
 			message2 = "success";
 		}
 		catch (Exception e)
 		{
-			message2 = "fail";
+			message2 = e.toString();
+			e.printStackTrace();
 		}
 		
 		mv.addObject("message2", message2);
