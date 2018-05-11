@@ -17,9 +17,9 @@ body {
 	<center>
 		<h2>
 			${message}
-			<c:forEach items="${users}" var="user">
-			    ${user.lastName}
-			</c:forEach>
+	      <c:forEach var = "i" begin = "1" end = "5">
+	         Item <c:out value = "${i}"/><p>
+	      </c:forEach>
 		</h2>
 	</center>
 
