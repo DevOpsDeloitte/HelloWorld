@@ -16,7 +16,7 @@ public class DBConnector
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connect = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=DevOps;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V");
 			statement = connect.createStatement();
-			resultSet = statement.executeQuery("Select [DevOps].[dbo].[Users].UserName" 
+			resultSet = statement.executeQuery("Select [DevOps].[dbo].[Users].UserName," 
 				+ "[DevOps].[dbo].[Users].LastName,"
 				+ "[DevOps].[dbo].[Users].FirstName"
 				+ "from [DevOps].[dbo].[Users]");
