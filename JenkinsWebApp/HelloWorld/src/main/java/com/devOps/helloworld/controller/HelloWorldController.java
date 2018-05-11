@@ -77,6 +77,8 @@ public class HelloWorldController {
 		
 		DBConnector dB = new DBConnector();
 		
+		mv.addObject("message", "Users currently registerd");
+		
 		try
 		{
 			ArrayList<User> users = dB.readData();

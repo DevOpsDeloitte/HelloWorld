@@ -18,7 +18,7 @@ body {
 		<h2>
 			${message}
 			<c:forEach items="${users}" var="user">
-			    ${module.lastName}
+			    ${user.lastName}
 			</c:forEach>
 		</h2>
 	</center>
