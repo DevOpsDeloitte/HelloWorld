@@ -1,5 +1,7 @@
 package com.devOps.helloworld.controller; 
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,12 +51,15 @@ public class HelloWorldController {
 			user.setCountry(country);
 			
 			DBConnector db = new DBConnector();
+			boolean success = false;
+			
 			try {
-				db.writeData();
+				success = db.writeData(user);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				message2 = e.toString();
 				e.printStackTrace();
+				success = false;
 			}
 			
 			mv.addObject("message", message);
@@ -62,6 +67,26 @@ public class HelloWorldController {
 			mv.addObject("lastName", lastName);
 			mv.addObject("message2", message2);
 			
+		return mv;
+	}
+	
+	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	public ModelAndView showMessage()
+	{
+		ModelAndView mv = new ModelAndView("Users");
+		mv.addObject("message", "Hello from users");
+		
+//		DBConnector dB = new DBConnector();
+		
+//		try
+//		{
+//			ArrayList<User> users = dB.readData();
+//		}
+//		catch (Exception e)
+//		{
+//			
+//		}
+		
 		return mv;
 	}
 }

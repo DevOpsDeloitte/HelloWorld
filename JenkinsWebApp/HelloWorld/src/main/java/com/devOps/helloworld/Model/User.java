@@ -42,14 +42,6 @@ public class User
 		return userName;
 	}
 
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
 	public String getPassword() {
 		return password;
 	}

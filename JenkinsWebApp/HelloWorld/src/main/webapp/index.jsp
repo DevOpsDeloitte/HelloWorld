@@ -185,5 +185,9 @@ body {
 	<input type="reset" name="btnSubmit" id="btnSubmit" value="Clear" class="btn" />	
 	</div>
 	</form>
+	
+	<form action = "users" method = "POST">
+		<input type="submit" name="btnSubmit" id="btnSubmit" value="Admin" class="btn" />
+	</form>
 </body>
 </html>
