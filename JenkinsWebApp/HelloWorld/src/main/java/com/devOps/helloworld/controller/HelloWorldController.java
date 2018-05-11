@@ -73,7 +73,7 @@ public class HelloWorldController {
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ModelAndView showMessage()
 	{
-		ModelAndView mv = new ModelAndView("Users");
+		ModelAndView mv = new ModelAndView("users");
 		mv.addObject("message", "Hello from users");
 		
 //		DBConnector dB = new DBConnector();
