@@ -26,9 +26,9 @@ public class DBConnector
 			while (resultSet.next())
 			{
 				User user = new User();
-				user.setLastName(resultSet.getString(1));
-				user.setFirstName(resultSet.getString(2));
-				user.setUserName(resultSet.getString(3));
+				user.setUserName(resultSet.getString(1));
+				user.setLastName(resultSet.getString(2));
+				user.setFirstName(resultSet.getString(3));
 				users.add(user);
 			}
 			

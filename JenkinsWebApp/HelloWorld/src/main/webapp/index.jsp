@@ -181,8 +181,8 @@ body {
 		</div>
 	</fieldset>
 	<div>
-	<input type="submit" name="btnSubmit" id="btnSubmit" value="Register" class="btn" />
-	<input type="reset" name="btnSubmit" id="btnSubmit" value="Clear" class="btn" />	
+	<input type="submit" name="btnRegister" id="btnSubmit" value="Register" class="btn" />
+	<input type="reset" name="btnReset" id="btnSubmit" value="Clear" class="btn" />	
 	</div>
 	</form>
 	
