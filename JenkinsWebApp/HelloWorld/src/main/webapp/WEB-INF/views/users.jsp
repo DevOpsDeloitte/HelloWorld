@@ -16,15 +16,27 @@ body {
 <body>
 	<center>
 		<h2>
-			${message} ${message2}
-	      <c:forEach var = "i" begin = "1" end = "5">
-	         Item <c:out value = "${i}"/><p>
-	      </c:forEach>
+			${message} ${message2}</h2>
 	      
-	      <c:forEach var = "user" items="${usersList}">
-	         <li>${user.lastName}</li>
-	      </c:forEach>
-		</h2>
+<div align="left">
+	<h2>List of current users</h2>
+	<table border="1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>User Name</th>
+		</tr>
+		
+		 <c:forEach var = "user" items="${usersList}">
+		 <tr>
+		 	<td>${user.lastName}</td>
+		 	<td>${user.firstName}</td>
+		 	<td>${user.userName}</td>
+		 </tr>
+		 </c:forEach>
+	</table>
+</div>
+
 	</center>
 
 </body>
