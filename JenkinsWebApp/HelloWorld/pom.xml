@@ -11,7 +11,7 @@
   <properties>
   	<spring.version>4.3.8.RELEASE</spring.version>
   	<suiteXmlFile>src/main/resources/testing.xml</suiteXmlFile>
-  	<skipTests>true</skipTests>
+  	<skipTests>false</skipTests>
   </properties>
   <dependencies>
     <dependency>

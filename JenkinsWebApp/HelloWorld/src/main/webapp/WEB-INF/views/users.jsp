@@ -14,10 +14,7 @@ body {
 </style>
 </head>
 <body>
-	<center>
-		<h2>
-			${message} ${message2}</h2>
-	      
+
 <div align="left">
 	<h2>List of current users</h2>
 	<table border="1">
@@ -36,8 +33,6 @@ body {
 		 </c:forEach>
 	</table>
 </div>
-
-	</center>
 
 </body>
 </html>
