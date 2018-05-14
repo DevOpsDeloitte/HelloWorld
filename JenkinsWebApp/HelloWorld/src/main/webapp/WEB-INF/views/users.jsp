@@ -26,8 +26,8 @@ body {
 		
 		 <c:forEach var = "user" items="${usersList}">
 		 <tr>
-		 	<td>${user.lastName}</td>
 		 	<td>${user.firstName}</td>
+		 	<td>${user.lastName}</td>
 		 	<td>${user.userName}</td>
 		 </tr>
 		 </c:forEach>

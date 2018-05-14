@@ -13,8 +13,6 @@ import com.devOps.helloworld.Model.User;
 
 @Controller
 public class HelloWorldController {
-	String message = "Thank you!";
-	String message2 = "You have successfully registered.";
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.POST)
 	public ModelAndView showMessage(
@@ -35,6 +33,9 @@ public class HelloWorldController {
 		
 			ModelAndView mv = new ModelAndView("helloworld");
 			
+			String message = "Thank you!";
+			String message2 = "You have successfully registered.";
+			
 			User user = new User();
 			user.setFirstName(firstName);
 			user.setLastName(lastName);
@@ -51,15 +52,11 @@ public class HelloWorldController {
 			user.setCountry(country);
 			
 			DBConnector db = new DBConnector();
-			boolean success = false;
 			
 			try {
-				success = db.writeData(user);
+				db.writeData(user);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				message2 = e.toString();
-				e.printStackTrace();
-				success = false;
+				message2 = "Unable to register";
 			}
 			
 			mv.addObject("message", message);
@@ -77,23 +74,17 @@ public class HelloWorldController {
 		
 		DBConnector dB = new DBConnector();
 		
-		String message2 = "";
-		
 		mv.addObject("message", "Users currently registerd");
 		
 		try
 		{
 			ArrayList<User> users = dB.readData();
 			mv.addObject("usersList", users);
-			message2 = "success";
 		}
 		catch (Exception e)
 		{
-			message2 = e.toString();
-			e.printStackTrace();
+
 		}
-		
-		mv.addObject("message2", message2);
 		
 		return mv;
 	}

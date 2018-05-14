@@ -47,5 +47,14 @@ public class HelloWorldTest {
 		user.setAddress1("123 x Street");
 		Assert.assertTrue(user.getAddress1().equals("123 x Street"));
 	}
+	
+	@Test
+	public void testUserZipcode(){
+		
+		User user = new User();
+		user.setZipcode("20109");
+		Assert.assertTrue(user.getAddress1().equals("20109"));
+	}
+
 
 }

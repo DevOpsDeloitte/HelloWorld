@@ -6,7 +6,6 @@ public class User
 	private String firstName;
 	private String lastName;
 	private String userName;
-	private String userId;
 	private String password;
 	private String address1;
 	private String address2;
