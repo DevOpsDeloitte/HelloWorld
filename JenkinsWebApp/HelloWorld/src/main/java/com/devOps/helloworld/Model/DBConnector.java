@@ -2,10 +2,11 @@ package com.devOps.helloworld.Model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBConnector
 {
-	public ArrayList<User> readData() throws Exception 
+	public List<User> readData() throws SQLException, ClassNotFoundException
 	{
 		Connection connect = null;
 		Statement statement = null;
@@ -15,13 +16,15 @@ public class DBConnector
 		{
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			connect = DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=DevOps;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V");
+			
 			statement = connect.createStatement();
+			
 			resultSet = statement.executeQuery("Select [DevOps].[dbo].[Users].UserName, " 
 				+ "[DevOps].[dbo].[Users].LastName, "
 				+ "[DevOps].[dbo].[Users].FirstName "
 				+ "from [DevOps].[dbo].[Users]");
 			
-			ArrayList<User> users = new ArrayList<User>();
+			List<User> users = new ArrayList<User>();
 			
 			while (resultSet.next())
 			{
@@ -36,20 +39,25 @@ public class DBConnector
 			
 			
 		}
-		catch (Exception e)
+		catch (SQLException e)
+		{
+			throw e;
+		}
+		catch (ClassNotFoundException e)
 		{
 			throw e;
 		}
 		finally 
 		{
-
+			statement.close();
 		}
 	}
 	
 	public boolean writeData(User user) throws Exception 
 	{
 		Connection connect = null;
-
+		PreparedStatement p = null;
+		
 		try 
 		{
 			String connectionUrl = "jdbc:sqlserver://localhost;databaseName=DevOps;user=sadevops;password=zb4^1OL7&6mbh/F6T6YS5j!V";
@@ -60,7 +68,7 @@ public class DBConnector
 					+ "(LastName, FirstName, UserName, Password, Address1, Address2, City, State, Country, Zipcode, Title, Email, PhoneNumber) VALUES"
 					+ "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
-			PreparedStatement p = connect.prepareStatement(sqlStatement);
+			p = connect.prepareStatement(sqlStatement);
 			
 			p.setString(1, user.getLastName());
 			p.setString(2, user.getFirstName());
@@ -81,13 +89,13 @@ public class DBConnector
 			return inserted > 0 ? true: false;	
 		}
 		
-		catch (Exception e)
+		catch (SQLException e)
 		{
 			throw e;
 		}
 		finally 
 		{
-
+			p.close();
 		}
 	}
 }

@@ -1,6 +1,8 @@
 package com.devOps.helloworld.controller; 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -74,16 +76,26 @@ public class HelloWorldController {
 		
 		DBConnector dB = new DBConnector();
 		
-		mv.addObject("message", "Users currently registerd");
+		
+		String message = "Users currently registered";
 		
 		try
 		{
-			ArrayList<User> users = dB.readData();
+			List<User> users = dB.readData();
 			mv.addObject("usersList", users);
+			
 		}
-		catch (Exception e)
+		catch (SQLException e)
 		{
-
+			message = "Unable to retrieve users";
+		}
+		catch (ClassNotFoundException e)
+		{
+			message = "Unable to retrieve users";
+		}
+		finally
+		{
+			mv.addObject("message", message);
 		}
 		
 		return mv;

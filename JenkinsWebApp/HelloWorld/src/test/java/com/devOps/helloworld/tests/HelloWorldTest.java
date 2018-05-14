@@ -53,7 +53,7 @@ public class HelloWorldTest {
 		
 		User user = new User();
 		user.setZipcode("20109");
-		Assert.assertTrue(user.getAddress1().equals("20109"));
+		Assert.assertTrue(user.getZipcode().equals("20109"));
 	}
 
 
