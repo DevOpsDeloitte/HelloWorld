@@ -47,10 +47,6 @@ public class DBConnector
 		{
 			throw e;
 		}
-		finally 
-		{
-			statement.close();
-		}
 	}
 	
 	public boolean writeData(User user) throws Exception 
@@ -92,10 +88,6 @@ public class DBConnector
 		catch (SQLException e)
 		{
 			throw e;
-		}
-		finally 
-		{
-			p.close();
 		}
 	}
 }

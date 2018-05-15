@@ -55,6 +55,30 @@ public class HelloWorldTest {
 		user.setZipcode("20109");
 		Assert.assertTrue(user.getZipcode().equals("20109"));
 	}
+	
+	@Test
+	public void testUserTitle()
+	{
+		User user = new User();
+		user.setTitle("Consultant");
+		Assert.assertTrue(user.getTitle().equals("Consultant"));
+	}
+	
+	@Test
+	public void testUserEmail()
+	{
+		User user = new User();
+		user.setEmail("email@email.com");
+		Assert.assertTrue(user.getEmail().equals("email@email.com"));
+	}
+	
+	@Test
+	public void testUserPhoneNumber()
+	{
+		User user = new User();
+		user.setPhoneNumber("+1-123-123-1234");
+		Assert.assertTrue(user.getPhoneNumber().equals("+1-123-123-1234"));
+	}
 
 
 }
